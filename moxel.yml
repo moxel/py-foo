@@ -1,0 +1,14 @@
+name: py-foo
+tag: latest
+image: moxel/py3-tf-cpu
+assets:
+resources:
+  cpu: 1
+  memory: "512Mi"
+input_space:
+  seed: String
+output_space:
+  number: String
+main:
+  type: python  
+  entrypoint: serve.py::predict
