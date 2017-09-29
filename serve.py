@@ -1,11 +1,8 @@
 import random
+import numpy as np
 
-from moxel.space import String
-
-def predict(ins):
-    seed = ins['seed'].to_str()
-    random.seed(int(seed))
-    result = str(random.random())
+def predict(seed):
+    random.seed(seed)
     return {
-		'number': String()(result)
+		'number': np.float32(random.random())
 	}

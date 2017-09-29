@@ -1,14 +1,16 @@
 name: py-foo
 tag: latest
-image: moxel/py3-tf-cpu
+image: moxel/python3
 assets:
 resources:
   cpu: 1
   memory: "512Mi"
 input_space:
-  seed: String
+  seed: int
 output_space:
-  number: String
+  number: float32
+envs:
+  CUDA: 1
 main:
   type: python  
   entrypoint: serve.py::predict
